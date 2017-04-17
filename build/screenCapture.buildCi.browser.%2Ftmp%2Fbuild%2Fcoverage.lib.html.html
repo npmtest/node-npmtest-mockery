@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-mockery/mockery/mockery.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-mockery/node_modules/mockery/mockery.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-mockery">npmtest-mockery (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-mockery/mockery/mockery.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-mockery/node_modules/mockery/mockery.js</span></h1>
     <h2>
         
         Statements: <span class="metric">26.4% <small>(33 / 125)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-mockery/mockery/</a> &#187; mockery.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-mockery/node_modules/mockery/</a> » mockery.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -1001,18 +999,18 @@ var m = require('module'),
  * Merge the supplied options in with a new copy of the default options to get
  * the effective options, and return those.
  */
-<span class="fstat-no" title="function not covered" >function getEffectiveOptions(opts) {</span>
-<span class="cstat-no" title="statement not covered" >    var options = {};</span>
+<span class="fstat-no" title="function not covered">function getEffectiveOptions(opts) {</span>
+<span class="cstat-no" title="statement not covered">    var options = {};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    Object.keys(defaultOptions).forEach(<span class="fstat-no" title="function not covered" >function (key) {</span></span>
-<span class="cstat-no" title="statement not covered" >        options[key] = defaultOptions[key];</span>
+<span class="cstat-no" title="statement not covered">    Object.keys(defaultOptions).forEach(<span class="fstat-no" title="function not covered">function (key) {</span></span>
+<span class="cstat-no" title="statement not covered">        options[key] = defaultOptions[key];</span>
     });
-<span class="cstat-no" title="statement not covered" >    if (opts) {</span>
-<span class="cstat-no" title="statement not covered" >        Object.keys(opts).forEach(<span class="fstat-no" title="function not covered" >function (key) {</span></span>
-<span class="cstat-no" title="statement not covered" >            options[key] = opts[key];</span>
+<span class="cstat-no" title="statement not covered">    if (opts) {</span>
+<span class="cstat-no" title="statement not covered">        Object.keys(opts).forEach(<span class="fstat-no" title="function not covered">function (key) {</span></span>
+<span class="cstat-no" title="statement not covered">            options[key] = opts[key];</span>
         });
     }
-<span class="cstat-no" title="statement not covered" >    return options;</span>
+<span class="cstat-no" title="statement not covered">    return options;</span>
 }
 &nbsp;
 /*
@@ -1022,43 +1020,43 @@ var m = require('module'),
  * The signature of this function *must* match that of Node's Module._load,
  * since it will replace that when mockery is enabled.
  */
-<span class="fstat-no" title="function not covered" >function hookedLoader(request, parent, isMain) {</span>
-<span class="cstat-no" title="statement not covered" >    var subst, allow, file;</span>
+<span class="fstat-no" title="function not covered">function hookedLoader(request, parent, isMain) {</span>
+<span class="cstat-no" title="statement not covered">    var subst, allow, file;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!originalLoader) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error("Loader has not been hooked");</span>
+<span class="cstat-no" title="statement not covered">    if (!originalLoader) {</span>
+<span class="cstat-no" title="statement not covered">        throw new Error("Loader has not been hooked");</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (registeredMocks.hasOwnProperty(request)) {</span>
-<span class="cstat-no" title="statement not covered" >        return registeredMocks[request];</span>
+<span class="cstat-no" title="statement not covered">    if (registeredMocks.hasOwnProperty(request)) {</span>
+<span class="cstat-no" title="statement not covered">        return registeredMocks[request];</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (registeredSubstitutes.hasOwnProperty(request)) {</span>
-<span class="cstat-no" title="statement not covered" >        subst = registeredSubstitutes[request];</span>
-<span class="cstat-no" title="statement not covered" >        if (!subst.module &amp;&amp; subst.name) {</span>
-<span class="cstat-no" title="statement not covered" >            subst.module = originalLoader(subst.name, parent, isMain);</span>
+<span class="cstat-no" title="statement not covered">    if (registeredSubstitutes.hasOwnProperty(request)) {</span>
+<span class="cstat-no" title="statement not covered">        subst = registeredSubstitutes[request];</span>
+<span class="cstat-no" title="statement not covered">        if (!subst.module &amp;&amp; subst.name) {</span>
+<span class="cstat-no" title="statement not covered">            subst.module = originalLoader(subst.name, parent, isMain);</span>
         }
-<span class="cstat-no" title="statement not covered" >        if (!subst.module) {</span>
-<span class="cstat-no" title="statement not covered" >            throw new Error("Misconfigured substitute for '" + request + "'");</span>
+<span class="cstat-no" title="statement not covered">        if (!subst.module) {</span>
+<span class="cstat-no" title="statement not covered">            throw new Error("Misconfigured substitute for '" + request + "'");</span>
         }
-<span class="cstat-no" title="statement not covered" >        return subst.module;</span>
+<span class="cstat-no" title="statement not covered">        return subst.module;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (registeredAllowables.hasOwnProperty(request)) {</span>
-<span class="cstat-no" title="statement not covered" >        allow = registeredAllowables[request];</span>
-<span class="cstat-no" title="statement not covered" >        if (allow.unhook) {</span>
-<span class="cstat-no" title="statement not covered" >            file = m._resolveFilename(request, parent);</span>
-<span class="cstat-no" title="statement not covered" >            if ((file.indexOf('/') !== -1 || file.indexOf('\\') !== -1) &amp;&amp; allow.paths.indexOf(file) === -1) {</span>
-<span class="cstat-no" title="statement not covered" >                allow.paths.push(file);</span>
+<span class="cstat-no" title="statement not covered">    if (registeredAllowables.hasOwnProperty(request)) {</span>
+<span class="cstat-no" title="statement not covered">        allow = registeredAllowables[request];</span>
+<span class="cstat-no" title="statement not covered">        if (allow.unhook) {</span>
+<span class="cstat-no" title="statement not covered">            file = m._resolveFilename(request, parent);</span>
+<span class="cstat-no" title="statement not covered">            if ((file.indexOf('/') !== -1 || file.indexOf('\\') !== -1) &amp;&amp; allow.paths.indexOf(file) === -1) {</span>
+<span class="cstat-no" title="statement not covered">                allow.paths.push(file);</span>
             }
         }
     } else {
-<span class="cstat-no" title="statement not covered" >        if (options.warnOnUnregistered) {</span>
-<span class="cstat-no" title="statement not covered" >            console.warn("WARNING: loading non-allowed module: " + request);</span>
+<span class="cstat-no" title="statement not covered">        if (options.warnOnUnregistered) {</span>
+<span class="cstat-no" title="statement not covered">            console.warn("WARNING: loading non-allowed module: " + request);</span>
         }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return originalLoader(request, parent, isMain);</span>
+<span class="cstat-no" title="statement not covered">    return originalLoader(request, parent, isMain);</span>
 }
 &nbsp;
 /*
@@ -1066,22 +1064,22 @@ var m = require('module'),
  * 'require' invocations will be hooked until 'disable' is called. Calling this
  * function more than once will have no ill effects.
  */
-<span class="fstat-no" title="function not covered" >function enable(opts) {</span>
-<span class="cstat-no" title="statement not covered" >    if (originalLoader) {</span>
+<span class="fstat-no" title="function not covered">function enable(opts) {</span>
+<span class="cstat-no" title="statement not covered">    if (originalLoader) {</span>
         // Already hooked
-<span class="cstat-no" title="statement not covered" >        return;</span>
+<span class="cstat-no" title="statement not covered">        return;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    options = getEffectiveOptions(opts);</span>
+<span class="cstat-no" title="statement not covered">    options = getEffectiveOptions(opts);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (options.useCleanCache) {</span>
-<span class="cstat-no" title="statement not covered" >        originalCache = m._cache;</span>
-<span class="cstat-no" title="statement not covered" >        m._cache = {};</span>
-<span class="cstat-no" title="statement not covered" >        repopulateNative();</span>
+<span class="cstat-no" title="statement not covered">    if (options.useCleanCache) {</span>
+<span class="cstat-no" title="statement not covered">        originalCache = m._cache;</span>
+<span class="cstat-no" title="statement not covered">        m._cache = {};</span>
+<span class="cstat-no" title="statement not covered">        repopulateNative();</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    originalLoader = m._load;</span>
-<span class="cstat-no" title="statement not covered" >    m._load = hookedLoader;</span>
+<span class="cstat-no" title="statement not covered">    originalLoader = m._load;</span>
+<span class="cstat-no" title="statement not covered">    m._load = hookedLoader;</span>
 }
 &nbsp;
 /*
@@ -1089,30 +1087,30 @@ var m = require('module'),
  * invocations will be seen by mockery. Calling this function more than once
  * will have no ill effects.
  */
-<span class="fstat-no" title="function not covered" >function disable() {</span>
-<span class="cstat-no" title="statement not covered" >    if (!originalLoader) {</span>
+<span class="fstat-no" title="function not covered">function disable() {</span>
+<span class="cstat-no" title="statement not covered">    if (!originalLoader) {</span>
         // Not hooked
-<span class="cstat-no" title="statement not covered" >        return;</span>
+<span class="cstat-no" title="statement not covered">        return;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (options.useCleanCache) {</span>
+<span class="cstat-no" title="statement not covered">    if (options.useCleanCache) {</span>
         // Previously this just set m._cache to originalCache. This would make
         // node re-require native addons that were required while mockery was
         // enabled, which breaks it in node@&gt;=0.12. Instead populate
         // originalCache with any native addons that were first required since
         // mockery was enabled.
-<span class="cstat-no" title="statement not covered" >        Object.keys(m._cache).forEach(<span class="fstat-no" title="function not covered" >function(k){</span></span>
-<span class="cstat-no" title="statement not covered" >            if (k.indexOf('\.node') &gt; -1 &amp;&amp; !originalCache[k]) {</span>
-<span class="cstat-no" title="statement not covered" >                originalCache[k] = m._cache[k];</span>
+<span class="cstat-no" title="statement not covered">        Object.keys(m._cache).forEach(<span class="fstat-no" title="function not covered">function(k){</span></span>
+<span class="cstat-no" title="statement not covered">            if (k.indexOf('\.node') &gt; -1 &amp;&amp; !originalCache[k]) {</span>
+<span class="cstat-no" title="statement not covered">                originalCache[k] = m._cache[k];</span>
             }
         });
-<span class="cstat-no" title="statement not covered" >        removeParentReferences();</span>
-<span class="cstat-no" title="statement not covered" >        m._cache = originalCache;</span>
-<span class="cstat-no" title="statement not covered" >        originalCache = null;</span>
+<span class="cstat-no" title="statement not covered">        removeParentReferences();</span>
+<span class="cstat-no" title="statement not covered">        m._cache = originalCache;</span>
+<span class="cstat-no" title="statement not covered">        originalCache = null;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    m._load = originalLoader;</span>
-<span class="cstat-no" title="statement not covered" >    originalLoader = null;</span>
+<span class="cstat-no" title="statement not covered">    m._load = originalLoader;</span>
+<span class="cstat-no" title="statement not covered">    originalLoader = null;</span>
 }
 &nbsp;
  /*
@@ -1120,11 +1118,11 @@ var m = require('module'),
  * state. Calling this function when the clean cache option is not in effect
  * will have no ill effects, but will do nothing.
  */
-<span class="fstat-no" title="function not covered" >function resetCache() {</span>
-<span class="cstat-no" title="statement not covered" >    if (options.useCleanCache &amp;&amp; originalCache) {</span>
-<span class="cstat-no" title="statement not covered" >        removeParentReferences();</span>
-<span class="cstat-no" title="statement not covered" >        m._cache = {};</span>
-<span class="cstat-no" title="statement not covered" >        repopulateNative();</span>
+<span class="fstat-no" title="function not covered">function resetCache() {</span>
+<span class="cstat-no" title="statement not covered">    if (options.useCleanCache &amp;&amp; originalCache) {</span>
+<span class="cstat-no" title="statement not covered">        removeParentReferences();</span>
+<span class="cstat-no" title="statement not covered">        m._cache = {};</span>
+<span class="cstat-no" title="statement not covered">        repopulateNative();</span>
     }
 }
 &nbsp;
@@ -1133,10 +1131,10 @@ var m = require('module'),
  * The reason is that native modules can register themselves to be loaded automatically
  * This will re-populate the cache with the native modules that have not been mocked
  */
-<span class="fstat-no" title="function not covered" >function repopulateNative() {</span>
-<span class="cstat-no" title="statement not covered" >  Object.keys(originalCache).forEach(<span class="fstat-no" title="function not covered" >function(k) {</span></span>
-<span class="cstat-no" title="statement not covered" >      if (k.indexOf('\.node') &gt; -1 &amp;&amp; !m._cache[k]) {</span>
-<span class="cstat-no" title="statement not covered" >          m._cache[k] = originalCache[k];</span>
+<span class="fstat-no" title="function not covered">function repopulateNative() {</span>
+<span class="cstat-no" title="statement not covered">  Object.keys(originalCache).forEach(<span class="fstat-no" title="function not covered">function(k) {</span></span>
+<span class="cstat-no" title="statement not covered">      if (k.indexOf('\.node') &gt; -1 &amp;&amp; !m._cache[k]) {</span>
+<span class="cstat-no" title="statement not covered">          m._cache[k] = originalCache[k];</span>
       }
   });
 }
@@ -1145,16 +1143,16 @@ var m = require('module'),
  * Enable or disable warnings to the console when previously registered mocks
  * and subsitutes are replaced.
  */
-<span class="fstat-no" title="function not covered" >function warnOnReplace(enable) {</span>
-<span class="cstat-no" title="statement not covered" >    options.warnOnReplace = enable;</span>
+<span class="fstat-no" title="function not covered">function warnOnReplace(enable) {</span>
+<span class="cstat-no" title="statement not covered">    options.warnOnReplace = enable;</span>
 }
 &nbsp;
 /*
  * Enable or disable warnings to the console when modules are loaded that have
  * not been registered as a mock, a substitute, or allowed.
  */
-<span class="fstat-no" title="function not covered" >function warnOnUnregistered(enable) {</span>
-<span class="cstat-no" title="statement not covered" >    options.warnOnUnregistered = enable;</span>
+<span class="fstat-no" title="function not covered">function warnOnUnregistered(enable) {</span>
+<span class="cstat-no" title="statement not covered">    options.warnOnUnregistered = enable;</span>
 }
 &nbsp;
 /*
@@ -1163,11 +1161,11 @@ var m = require('module'),
  * mock need not mock out all original exports, but no fallback is provided
  * for anything not mocked and subsequently invoked.
  */
-<span class="fstat-no" title="function not covered" >function registerMock(mod, mock) {</span>
-<span class="cstat-no" title="statement not covered" >    if (options.warnOnReplace &amp;&amp; registeredMocks.hasOwnProperty(mod)) {</span>
-<span class="cstat-no" title="statement not covered" >        console.warn("WARNING: Replacing existing mock for module: " + mod);</span>
+<span class="fstat-no" title="function not covered">function registerMock(mod, mock) {</span>
+<span class="cstat-no" title="statement not covered">    if (options.warnOnReplace &amp;&amp; registeredMocks.hasOwnProperty(mod)) {</span>
+<span class="cstat-no" title="statement not covered">        console.warn("WARNING: Replacing existing mock for module: " + mod);</span>
     }
-<span class="cstat-no" title="statement not covered" >    registeredMocks[mod] = mock;</span>
+<span class="cstat-no" title="statement not covered">    registeredMocks[mod] = mock;</span>
 }
 &nbsp;
 /*
@@ -1175,9 +1173,9 @@ var m = require('module'),
  * that module will revert to the previous behaviour (which, by default, means
  * falling back to the original 'require' behaviour).
  */
-<span class="fstat-no" title="function not covered" >function deregisterMock(mod) {</span>
-<span class="cstat-no" title="statement not covered" >    if (registeredMocks.hasOwnProperty(mod)) {</span>
-<span class="cstat-no" title="statement not covered" >        delete registeredMocks[mod];</span>
+<span class="fstat-no" title="function not covered">function deregisterMock(mod) {</span>
+<span class="cstat-no" title="statement not covered">    if (registeredMocks.hasOwnProperty(mod)) {</span>
+<span class="cstat-no" title="statement not covered">        delete registeredMocks[mod];</span>
     }
 }
 &nbsp;
@@ -1187,11 +1185,11 @@ var m = require('module'),
  * replaced by a 'require' for the substitute module. This is useful when
  * a mock implementation is itself implemented as a module.
  */
-<span class="fstat-no" title="function not covered" >function registerSubstitute(mod, subst) {</span>
-<span class="cstat-no" title="statement not covered" >    if (options.warnOnReplace &amp;&amp; registeredSubstitutes.hasOwnProperty(mod)) {</span>
-<span class="cstat-no" title="statement not covered" >        console.warn("WARNING: Replacing existing substitute for module: " + mod);</span>
+<span class="fstat-no" title="function not covered">function registerSubstitute(mod, subst) {</span>
+<span class="cstat-no" title="statement not covered">    if (options.warnOnReplace &amp;&amp; registeredSubstitutes.hasOwnProperty(mod)) {</span>
+<span class="cstat-no" title="statement not covered">        console.warn("WARNING: Replacing existing substitute for module: " + mod);</span>
     }
-<span class="cstat-no" title="statement not covered" >    registeredSubstitutes[mod] = {</span>
+<span class="cstat-no" title="statement not covered">    registeredSubstitutes[mod] = {</span>
         name: subst
     };
 }
@@ -1201,9 +1199,9 @@ var m = require('module'),
  * 'require' for that module will revert to the previous behaviour (which, by
  * default, means falling back to the original 'require' behaviour).
  */
-<span class="fstat-no" title="function not covered" >function deregisterSubstitute(mod) {</span>
-<span class="cstat-no" title="statement not covered" >    if (registeredSubstitutes.hasOwnProperty(mod)) {</span>
-<span class="cstat-no" title="statement not covered" >        delete registeredSubstitutes[mod];</span>
+<span class="fstat-no" title="function not covered">function deregisterSubstitute(mod) {</span>
+<span class="cstat-no" title="statement not covered">    if (registeredSubstitutes.hasOwnProperty(mod)) {</span>
+<span class="cstat-no" title="statement not covered">        delete registeredSubstitutes[mod];</span>
     }
 }
 &nbsp;
@@ -1216,8 +1214,8 @@ var m = require('module'),
  * If 'unhook' is true, the module will be removed from the module cache when
  * it is deregistered.
  */
-<span class="fstat-no" title="function not covered" >function registerAllowable(mod, unhook) {</span>
-<span class="cstat-no" title="statement not covered" >    registeredAllowables[mod] = {</span>
+<span class="fstat-no" title="function not covered">function registerAllowable(mod, unhook) {</span>
+<span class="cstat-no" title="statement not covered">    registeredAllowables[mod] = {</span>
         unhook: !!unhook,
         paths: []
     };
@@ -1228,9 +1226,9 @@ var m = require('module'),
  * that performs the same function as 'registerAllowable' but for an array of
  * modules rather than a single module.
  */
-<span class="fstat-no" title="function not covered" >function registerAllowables(mods, unhook) {</span>
-<span class="cstat-no" title="statement not covered" >    mods.forEach(<span class="fstat-no" title="function not covered" >function (mod) {</span></span>
-<span class="cstat-no" title="statement not covered" >        registerAllowable(mod, unhook);</span>
+<span class="fstat-no" title="function not covered">function registerAllowables(mods, unhook) {</span>
+<span class="cstat-no" title="statement not covered">    mods.forEach(<span class="fstat-no" title="function not covered">function (mod) {</span></span>
+<span class="cstat-no" title="statement not covered">        registerAllowable(mod, unhook);</span>
     });
 }
 &nbsp;
@@ -1239,15 +1237,15 @@ var m = require('module'),
  * will generate a warning that the module is not allowed, unless or until a
  * mock or substitute is registered for that module.
  */
-<span class="fstat-no" title="function not covered" >function deregisterAllowable(mod) {</span>
-<span class="cstat-no" title="statement not covered" >    if (registeredAllowables.hasOwnProperty(mod)) {</span>
-<span class="cstat-no" title="statement not covered" >        var allow = registeredAllowables[mod];</span>
-<span class="cstat-no" title="statement not covered" >        if (allow.unhook) {</span>
-<span class="cstat-no" title="statement not covered" >            allow.paths.forEach(<span class="fstat-no" title="function not covered" >function (p) {</span></span>
-<span class="cstat-no" title="statement not covered" >                delete m._cache[p];</span>
+<span class="fstat-no" title="function not covered">function deregisterAllowable(mod) {</span>
+<span class="cstat-no" title="statement not covered">    if (registeredAllowables.hasOwnProperty(mod)) {</span>
+<span class="cstat-no" title="statement not covered">        var allow = registeredAllowables[mod];</span>
+<span class="cstat-no" title="statement not covered">        if (allow.unhook) {</span>
+<span class="cstat-no" title="statement not covered">            allow.paths.forEach(<span class="fstat-no" title="function not covered">function (p) {</span></span>
+<span class="cstat-no" title="statement not covered">                delete m._cache[p];</span>
             });
         }
-<span class="cstat-no" title="statement not covered" >        delete registeredAllowables[mod];</span>
+<span class="cstat-no" title="statement not covered">        delete registeredAllowables[mod];</span>
     }
 }
 &nbsp;
@@ -1256,9 +1254,9 @@ var m = require('module'),
  * that performs the same function as 'deregisterAllowable' but for an array of
  * modules rather than a single module.
  */
-<span class="fstat-no" title="function not covered" >function deregisterAllowables(mods) {</span>
-<span class="cstat-no" title="statement not covered" >    mods.forEach(<span class="fstat-no" title="function not covered" >function (mod) {</span></span>
-<span class="cstat-no" title="statement not covered" >        deregisterAllowable(mod);</span>
+<span class="fstat-no" title="function not covered">function deregisterAllowables(mods) {</span>
+<span class="cstat-no" title="statement not covered">    mods.forEach(<span class="fstat-no" title="function not covered">function (mod) {</span></span>
+<span class="cstat-no" title="statement not covered">        deregisterAllowable(mod);</span>
     });
 }
 &nbsp;
@@ -1267,33 +1265,33 @@ var m = require('module'),
  * to a clean slate. This does not affect the enabled / disabled state of
  * mockery, though.
  */
-<span class="fstat-no" title="function not covered" >function deregisterAll() {</span>
-<span class="cstat-no" title="statement not covered" >    Object.keys(registeredAllowables).forEach(<span class="fstat-no" title="function not covered" >function (mod) {</span></span>
-<span class="cstat-no" title="statement not covered" >        var allow = registeredAllowables[mod];</span>
-<span class="cstat-no" title="statement not covered" >        if (allow.unhook) {</span>
-<span class="cstat-no" title="statement not covered" >            allow.paths.forEach(<span class="fstat-no" title="function not covered" >function (p) {</span></span>
-<span class="cstat-no" title="statement not covered" >                delete m._cache[p];</span>
+<span class="fstat-no" title="function not covered">function deregisterAll() {</span>
+<span class="cstat-no" title="statement not covered">    Object.keys(registeredAllowables).forEach(<span class="fstat-no" title="function not covered">function (mod) {</span></span>
+<span class="cstat-no" title="statement not covered">        var allow = registeredAllowables[mod];</span>
+<span class="cstat-no" title="statement not covered">        if (allow.unhook) {</span>
+<span class="cstat-no" title="statement not covered">            allow.paths.forEach(<span class="fstat-no" title="function not covered">function (p) {</span></span>
+<span class="cstat-no" title="statement not covered">                delete m._cache[p];</span>
             });
         }
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    registeredMocks = {};</span>
-<span class="cstat-no" title="statement not covered" >    registeredSubstitutes = {};</span>
-<span class="cstat-no" title="statement not covered" >    registeredAllowables = {};</span>
+<span class="cstat-no" title="statement not covered">    registeredMocks = {};</span>
+<span class="cstat-no" title="statement not covered">    registeredSubstitutes = {};</span>
+<span class="cstat-no" title="statement not covered">    registeredAllowables = {};</span>
 }
 &nbsp;
 /**
  * Remove references to modules in the mockery cache from
  * their parents' children.
  */
-<span class="fstat-no" title="function not covered" >function removeParentReferences() {</span>
-<span class="cstat-no" title="statement not covered" >    Object.keys(m._cache).forEach(<span class="fstat-no" title="function not covered" >function(k){</span></span>
-<span class="cstat-no" title="statement not covered" >        if (k.indexOf('\.node') === -1) {</span>
+<span class="fstat-no" title="function not covered">function removeParentReferences() {</span>
+<span class="cstat-no" title="statement not covered">    Object.keys(m._cache).forEach(<span class="fstat-no" title="function not covered">function(k){</span></span>
+<span class="cstat-no" title="statement not covered">        if (k.indexOf('\.node') === -1) {</span>
             // don't touch native modules, because they're special
-<span class="cstat-no" title="statement not covered" >            var mod = m._cache[k];</span>
-<span class="cstat-no" title="statement not covered" >            var idx = mod.parent.children.indexOf(mod);</span>
-<span class="cstat-no" title="statement not covered" >            if (idx &gt; -1) {</span>
-<span class="cstat-no" title="statement not covered" >                mod.parent.children.splice(idx, 1);</span>
+<span class="cstat-no" title="statement not covered">            var mod = m._cache[k];</span>
+<span class="cstat-no" title="statement not covered">            var idx = mod.parent.children.indexOf(mod);</span>
+<span class="cstat-no" title="statement not covered">            if (idx &gt; -1) {</span>
+<span class="cstat-no" title="statement not covered">                mod.parent.children.splice(idx, 1);</span>
             }
         }
     });
@@ -1316,10 +1314,11 @@ exports.deregisterAllowables = deregisterAllowables;
 exports.deregisterAll = deregisterAll;
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 22:09:10 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 16:45:38 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
