@@ -1,4 +1,7 @@
-# test coverage for  [mockery (v2.0.0)](https://github.com/mfncooper/mockery)  [![npm package](https://img.shields.io/npm/v/npmtest-mockery.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-mockery) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-mockery.svg)](https://travis-ci.org/npmtest/node-npmtest-mockery)
+# npmtest-mockery
+
+#### basic test coverage for  [mockery (v2.0.0)](https://github.com/mfncooper/mockery)  [![npm package](https://img.shields.io/npm/v/npmtest-mockery.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-mockery) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-mockery.svg)](https://travis-ci.org/npmtest/node-npmtest-mockery)
+
 #### Simplifying the use of mocks with Node.js
 
 [![NPM](https://nodei.co/npm/mockery.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/mockery)
